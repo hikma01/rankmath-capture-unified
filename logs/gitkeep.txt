@@ -1,0 +1,2 @@
+# This file ensures the logs directory is tracked by git while keeping actual log files ignored
+# Add *.log to .gitignore to prevent log files from being committed

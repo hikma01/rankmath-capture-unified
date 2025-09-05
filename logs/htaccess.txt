@@ -1,0 +1,20 @@
+# Deny access to log files
+<Files "*">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Prevent directory listing
+Options -Indexes
+
+# Block access to all file types
+<FilesMatch "\.(log|txt|json|csv)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Additional security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+</IfModule>

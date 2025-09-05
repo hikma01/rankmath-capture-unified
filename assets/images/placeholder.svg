@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f0f0f0"/>
+  <g opacity="0.5">
+    <rect x="100" y="100" width="1000" height="60" rx="4" fill="#e0e0e0"/>
+    <rect x="100" y="180" width="700" height="40" rx="4" fill="#e0e0e0"/>
+    <rect x="100" y="240" width="850" height="40" rx="4" fill="#e0e0e0"/>
+    <rect x="100" y="320" width="400" height="200" rx="4" fill="#d0d0d0"/>
+    <rect x="540" y="320" width="560" height="40" rx="4" fill="#e0e0e0"/>
+    <rect x="540" y="380" width="560" height="40" rx="4" fill="#e0e0e0"/>
+    <rect x="540" y="440" width="400" height="40" rx="4" fill="#e0e0e0"/>
+  </g>
+  <g transform="translate(600, 315)">
+    <circle cx="0" cy="0" r="60" fill="#c0c0c0" opacity="0.3"/>
+    <path d="M -30 -10 L 15 -10 L 15 -30 L 30 0 L 15 30 L 15 10 L -30 10 Z" fill="#999" opacity="0.5"/>
+  </g>
+  <text x="600" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#999">
+    URL Capture Placeholder
+  </text>
+</svg>

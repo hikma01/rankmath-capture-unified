@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="screenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5e72e4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4c63d2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Monitor/Screen -->
+  <rect x="8" y="8" width="48" height="36" rx="3" fill="url(#screenGradient)"/>
+  <rect x="11" y="11" width="42" height="30" rx="1" fill="white"/>
+  
+  <!-- Screen Content -->
+  <rect x="14" y="14" width="36" height="3" fill="#e0e0e0"/>
+  <rect x="14" y="19" width="24" height="2" fill="#e0e0e0"/>
+  <rect x="14" y="23" width="30" height="2" fill="#e0e0e0"/>
+  <rect x="14" y="27" width="20" height="10" fill="#f0f0f0"/>
+  <circle cx="24" cy="32" r="3" fill="#d0d0d0"/>
+  
+  <!-- Stand -->
+  <rect x="28" y="44" width="8" height="6" fill="#666"/>
+  <rect x="22" y="50" width="20" height="3" rx="1" fill="#666"/>
+  
+  <!-- Capture Indicator -->
+  <g transform="translate(44, 18)">
+    <circle cx="0" cy="0" r="8" fill="white" stroke="#27ae60" stroke-width="2"/>
+    <circle cx="0" cy="0" r="5" fill="#27ae60"/>
+    <circle cx="0" cy="0" r="2" fill="white"/>
+  </g>
+</svg>

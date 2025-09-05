@@ -1,0 +1,736 @@
+/**
+ * RMCU Admin Styles
+ * 
+ * @package RMCU_Plugin
+ * @since 1.0.0
+ */
+
+/* ==========================================================================
+   Variables et Reset
+   ========================================================================== */
+
+:root {
+    --rmcu-primary: #2271b1;
+    --rmcu-secondary: #50575e;
+    --rmcu-success: #00a32a;
+    --rmcu-warning: #dba617;
+    --rmcu-danger: #d63638;
+    --rmcu-info: #72aee6;
+    --rmcu-light: #f0f0f1;
+    --rmcu-dark: #1d2327;
+    --rmcu-border: #c3c4c7;
+    --rmcu-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --rmcu-radius: 4px;
+}
+
+/* ==========================================================================
+   Layout Principal
+   ========================================================================== */
+
+.rmcu-admin-wrapper {
+    margin-right: 20px;
+    padding: 20px 0;
+}
+
+.rmcu-admin-header {
+    background: #fff;
+    border: 1px solid var(--rmcu-border);
+    border-radius: var(--rmcu-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--rmcu-shadow);
+}
+
+.rmcu-admin-header h1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--rmcu-dark);
+}
+
+.rmcu-admin-header .rmcu-version {
+    background: var(--rmcu-light);
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: normal;
+    color: var(--rmcu-secondary);
+}
+
+/* ==========================================================================
+   Onglets de Navigation
+   ========================================================================== */
+
+.rmcu-tabs {
+    margin-bottom: 20px;
+}
+
+.rmcu-tabs .nav-tab-wrapper {
+    background: #fff;
+    border: 1px solid var(--rmcu-border);
+    border-radius: var(--rmcu-radius) var(--rmcu-radius) 0 0;
+    border-bottom: none;
+    padding: 0;
+}
+
+.rmcu-tabs .nav-tab {
+    margin: 0;
+    border: none;
+    background: transparent;
+    border-right: 1px solid var(--rmcu-border);
+    border-radius: 0;
+    padding: 12px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.rmcu-tabs .nav-tab:hover {
+    background: var(--rmcu-light);
+    color: var(--rmcu-primary);
+}
+
+.rmcu-tabs .nav-tab-active {
+    background: var(--rmcu-primary);
+    color: #fff;
+}
+
+.rmcu-tabs .nav-tab-active:hover {
+    background: var(--rmcu-primary);
+    color: #fff;
+}
+
+.rmcu-tabs .tab-panel {
+    display: none;
+    background: #fff;
+    border: 1px solid var(--rmcu-border);
+    border-radius: 0 0 var(--rmcu-radius) var(--rmcu-radius);
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.rmcu-tabs .tab-panel.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Cartes et Sections
+   ========================================================================== */
+
+.rmcu-card {
+    background: #fff;
+    border: 1px solid var(--rmcu-border);
+    border-radius: var(--rmcu-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--rmcu-shadow);
+}
+
+.rmcu-card-header {
+    border-bottom: 1px solid var(--rmcu-border);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.rmcu-card-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--rmcu-dark);
+}
+
+.rmcu-card-subtitle {
+    color: var(--rmcu-secondary);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* Grille de cartes */
+.rmcu-grid {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.rmcu-grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.rmcu-grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.rmcu-grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* ==========================================================================
+   Formulaires
+   ========================================================================== */
+
+.rmcu-form-group {
+    margin-bottom: 20px;
+}
+
+.rmcu-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--rmcu-dark);
+}
+
+.rmcu-form-group input[type="text"],
+.rmcu-form-group input[type="email"],
+.rmcu-form-group input[type="url"],
+.rmcu-form-group input[type="password"],
+.rmcu-form-group input[type="number"],
+.rmcu-form-group select,
+.rmcu-form-group textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 8px 12px;
+    border: 1px solid var(--rmcu-border);
+    border-radius: var(--rmcu-radius);
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.rmcu-form-group input:focus,
+.rmcu-form-group select:focus,
+.rmcu-form-group textarea:focus {
+    border-color: var(--rmcu-primary);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--rmcu-primary);
+}
+
+.rmcu-form-group .description {
+    margin-top: 5px;
+    color: var(--rmcu-secondary);
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* Switch Toggle */
+.rmcu-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.rmcu-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.rmcu-switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--rmcu-border);
+    transition: 0.4s;
+    border-radius: 24px;
+}
+
+.rmcu-switch-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.rmcu-switch input:checked + .rmcu-switch-slider {
+    background-color: var(--rmcu-success);
+}
+
+.rmcu-switch input:checked + .rmcu-switch-slider:before {
+    transform: translateX(26px);
+}
+
+/* ==========================================================================
+   Boutons
+   ========================================================================== */
+
+.rmcu-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--rmcu-radius);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+.rmcu-btn-primary {
+    background: var(--rmcu-primary);
+    color: #fff;
+    border-color: var(--rmcu-primary);
+}
+
+.rmcu-btn-primary:hover {
+    background: #135e96;
+    border-color: #135e96;
+    color: #fff;
+}
+
+.rmcu-btn-secondary {
+    background: var(--rmcu-secondary);
+    color: #fff;
+    border-color: var(--rmcu-secondary);
+}
+
+.rmcu-btn-success {
+    background: var(--rmcu-success);
+    color: #fff;
+    border-color: var(--rmcu-success);
+}
+
+.rmcu-btn-danger {
+    background: var(--rmcu-danger);
+    color: #fff;
+    border-color: var(--rmcu-danger);
+}
+
+.rmcu-btn-outline {
+    background: transparent;
+    color: var(--rmcu-primary);
+    border-color: var(--rmcu-primary);
+}
+
+.rmcu-btn-outline:hover {
+    background: var(--rmcu-primary);
+    color: #fff;
+}
+
+.rmcu-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.rmcu-btn-group {
+    display: inline-flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* ==========================================================================
+   Tableaux
+   ========================================================================== */
+
+.rmcu-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid var(--rmcu-border);
+    border-radius: var(--rmcu-radius);
+    overflow: hidden;
+}
+
+.rmcu-table thead {
+    background: var(--rmcu-light);
+}
+
+.rmcu-table th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--rmcu-dark);
+    border-bottom: 1px solid var(--rmcu-border);
+}
+
+.rmcu-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--rmcu-light);
+}
+
+.rmcu-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.rmcu-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Table responsive */
+.rmcu-table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ==========================================================================
+   Statistiques et Widgets
+   ========================================================================== */
+
+.rmcu-stats-widget {
+    background: #fff;
+    border: 1px solid var(--rmcu-border);
+    border-radius: var(--rmcu-radius);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rmcu-stats-widget:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.rmcu-stats-icon {
+    font-size: 36px;
+    color: var(--rmcu-primary);
+    margin-bottom: 10px;
+}
+
+.rmcu-stats-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--rmcu-dark);
+    margin-bottom: 5px;
+}
+
+.rmcu-stats-label {
+    color: var(--rmcu-secondary);
+    font-size: 14px;
+}
+
+/* Progress Bar */
+.rmcu-progress {
+    width: 100%;
+    height: 20px;
+    background: var(--rmcu-light);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.rmcu-progress-bar {
+    height: 100%;
+    background: var(--rmcu-primary);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Alertes et Notifications
+   ========================================================================== */
+
+.rmcu-alert {
+    padding: 12px 20px;
+    border-radius: var(--rmcu-radius);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rmcu-alert-info {
+    background: #e6f3ff;
+    border: 1px solid var(--rmcu-info);
+    color: #0073aa;
+}
+
+.rmcu-alert-success {
+    background: #edfaef;
+    border: 1px solid var(--rmcu-success);
+    color: #008a20;
+}
+
+.rmcu-alert-warning {
+    background: #fff8e5;
+    border: 1px solid var(--rmcu-warning);
+    color: #a68b00;
+}
+
+.rmcu-alert-danger {
+    background: #fef1f1;
+    border: 1px solid var(--rmcu-danger);
+    color: #b32d2e;
+}
+
+/* Toast Notifications */
+.rmcu-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--rmcu-dark);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: var(--rmcu-radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 99999;
+    max-width: 350px;
+}
+
+.rmcu-toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.rmcu-toast.success {
+    background: var(--rmcu-success);
+}
+
+.rmcu-toast.error {
+    background: var(--rmcu-danger);
+}
+
+.rmcu-toast.warning {
+    background: var(--rmcu-warning);
+    color: var(--rmcu-dark);
+}
+
+/* ==========================================================================
+   Media Upload
+   ========================================================================== */
+
+.rmcu-media-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.rmcu-media-preview {
+    width: 150px;
+    height: 150px;
+    border: 2px dashed var(--rmcu-border);
+    border-radius: var(--rmcu-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--rmcu-light);
+    overflow: hidden;
+}
+
+.rmcu-media-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.rmcu-media-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ==========================================================================
+   Loading et Spinners
+   ========================================================================== */
+
+.rmcu-spinner {
+    border: 3px solid var(--rmcu-light);
+    border-top: 3px solid var(--rmcu-primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.rmcu-loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+/* ==========================================================================
+   Badges et Tags
+   ========================================================================== */
+
+.rmcu-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rmcu-badge-primary {
+    background: var(--rmcu-primary);
+    color: #fff;
+}
+
+.rmcu-badge-success {
+    background: var(--rmcu-success);
+    color: #fff;
+}
+
+.rmcu-badge-warning {
+    background: var(--rmcu-warning);
+    color: #fff;
+}
+
+.rmcu-badge-danger {
+    background: var(--rmcu-danger);
+    color: #fff;
+}
+
+.rmcu-badge-secondary {
+    background: var(--rmcu-light);
+    color: var(--rmcu-secondary);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media screen and (max-width: 782px) {
+    .rmcu-admin-wrapper {
+        margin-right: 10px;
+    }
+    
+    .rmcu-grid-2,
+    .rmcu-grid-3,
+    .rmcu-grid-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .rmcu-form-group input[type="text"],
+    .rmcu-form-group input[type="email"],
+    .rmcu-form-group input[type="url"],
+    .rmcu-form-group input[type="password"],
+    .rmcu-form-group input[type="number"],
+    .rmcu-form-group select,
+    .rmcu-form-group textarea {
+        max-width: 100%;
+    }
+    
+    .rmcu-tabs .nav-tab {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    
+    .rmcu-table {
+        font-size: 13px;
+    }
+    
+    .rmcu-table th,
+    .rmcu-table td {
+        padding: 8px;
+    }
+    
+    .rmcu-toast {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .rmcu-admin-header h1 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .rmcu-btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .rmcu-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .rmcu-media-container {
+        flex-direction: column;
+    }
+    
+    .rmcu-tabs .nav-tab-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .rmcu-tabs .nav-tab {
+        border-right: none;
+        border-bottom: 1px solid var(--rmcu-border);
+    }
+}
+
+/* ==========================================================================
+   Utilitaires
+   ========================================================================== */
+
+.rmcu-text-center { text-align: center; }
+.rmcu-text-right { text-align: right; }
+.rmcu-text-left { text-align: left; }
+
+.rmcu-mt-0 { margin-top: 0; }
+.rmcu-mt-1 { margin-top: 10px; }
+.rmcu-mt-2 { margin-top: 20px; }
+.rmcu-mt-3 { margin-top: 30px; }
+
+.rmcu-mb-0 { margin-bottom: 0; }
+.rmcu-mb-1 { margin-bottom: 10px; }
+.rmcu-mb-2 { margin-bottom: 20px; }
+.rmcu-mb-3 { margin-bottom: 30px; }
+
+.rmcu-p-0 { padding: 0; }
+.rmcu-p-1 { padding: 10px; }
+.rmcu-p-2 { padding: 20px; }
+.rmcu-p-3 { padding: 30px; }
+
+.rmcu-hidden { display: none; }
+.rmcu-flex { display: flex; }
+.rmcu-flex-center { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.rmcu-gap-1 { gap: 10px; }
+.rmcu-gap-2 { gap: 20px; }
+
+/* Print Styles */
+@media print {
+    .rmcu-no-print {
+        display: none !important;
+    }
+    
+    .rmcu-card {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+}

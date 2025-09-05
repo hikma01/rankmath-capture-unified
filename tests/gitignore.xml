@@ -1,0 +1,44 @@
+# Test artifacts
+/coverage-report/
+coverage.xml
+coverage.txt
+test-results.xml
+test-results.html
+test-results.txt
+*.cache
+
+# PHPUnit
+.phpunit.result.cache
+phpunit.xml.dist.bak
+
+# Composer
+/vendor/
+composer.lock
+
+# WordPress test suite
+/wordpress/
+/wordpress-tests-lib/
+wp-tests-config.php
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+/tmp/
+/temp/
+*.tmp
+
+# Build files
+/build/
+/dist/

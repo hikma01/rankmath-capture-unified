@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
+    bootstrap="bootstrap.php"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    stopOnError="false"
+    stopOnIncomplete="false"
+    stopOnSkipped="false"
+    verbose="true"
+>
+    <!-- Test Suites -->
+    <testsuites>
+        <testsuite name="RMCU Unit Tests">
+            <directory suffix="Test.php">./unit</directory>
+        </testsuite>
+        <testsuite name="RMCU Integration Tests">
+            <directory suffix="Test.php">./integration</directory>
+        </testsuite>
+        <testsuite name="RMCU Acceptance Tests">
+            <directory suffix="Test.php">./acceptance</directory>
+        </testsuite>
+    </testsuites>
+
+    <!-- Code Coverage Configuration -->
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">../includes</directory>
+            <directory suffix=".php">../admin</directory>
+            <directory suffix=".php">../public</directory>
+        </include>
+        <exclude>
+            <directory>../vendor</directory>
+            <directory>../tests</directory>
+            <directory>../languages</directory>
+            <directory>../assets</directory>
+            <directory>../logs</directory>
+        </exclude>
+        <report>
+            <html outputDirectory="coverage-report" />
+            <text outputFile="coverage.txt" />
+            <clover outputFile="coverage.xml" />
+        </report>
+    </coverage>
+
+    <!-- Logging -->
+    <logging>
+        <junit outputFile="test-results.xml" />
+        <testdoxHtml outputFile="test-results.html" />
+        <testdoxText outputFile="test-results.txt" />
+    </logging>
+
+    <!-- PHP Configuration -->
+    <php>
+        <!-- Define test constants -->
+        <const name="RMCU_TESTS" value="true" />
+        <const name="RMCU_TESTS_DIR" value="./tests" />
+        <const name="WP_TESTS_PHPUNIT_POLYFILLS_PATH" value="vendor/yoast/phpunit-polyfills" />
+        
+        <!-- Environment variables -->
+        <env name="WP_TESTS_DOMAIN" value="example.org" />
+        <env name="WP_TESTS_EMAIL" value="admin@example.org" />
+        <env name="WP_TESTS_TITLE" value="RMCU Test Site" />
+        <env name="WP_PHP_BINARY" value="php" />
+        
+        <!-- WordPress test configuration -->
+        <env name="WP_TESTS_DB_NAME" value="wordpress_test" />
+        <env name="WP_TESTS_DB_USER" value="root" />
+        <env name="WP_TESTS_DB_PASS" value="" />
+        <env name="WP_TESTS_DB_HOST" value="localhost" />
+        <env name="WP_TESTS_TABLE_PREFIX" value="wptests_" />
+    </php>
+</phpunit>
